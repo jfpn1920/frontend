@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tienda de ropa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!----------------------------------->
+    <!--|estructura_menu_de_navegacion|-->
+    <!----------------------------------->
+    <header class="navbar">
+        <div class="logo">
+            <img src="imagen_4.png" alt="Logo Masomy" />
+            Masomy
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="nav-section">
+            <nav class="nav-links">
+                <a href="#">Inicio</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Contáctanos</a>
+                <a href="#">Categorías</a>
+            </nav>
+            <div class="icons">
+                <i class="fas fa-shopping-cart" title="Carrito de compras"></i>
+                <i class="fas fa-heart" title="Favoritos"></i>
+                <i class="fas fa-user" title="Perfil de usuario"></i>
+            </div>
+        </div>
+    </header>
+    <!------------------------->
+    <!--|estructura_carrusel|-->
+    <!------------------------->
+    <div class="carousel">
+        <div class="carousel-inner">
+            <img src="imagen_3.png" class="carousel-item active" alt="Imagen 1" />
+            <img src="imagen_1.png" class="carousel-item" alt="Imagen 2" />
+            <img src="imagen_2.png" class="carousel-item" alt="Imagen 3" />
+        </div>
+        <button class="carousel-control prev">&#10094;</button>
+        <button class="carousel-control next">&#10095;</button>
+        <div class="carousel-indicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+        </div>
+    </div>
+    <!------------------------------------->
+    <!--|estructura_vistas_de_categorias|-->
+    <!------------------------------------->
+    <section class="categorias">
+        <h2>Vistas de categorías</h2>
+        <div class="categoria-lista">
+            <button class="categoria-btn">
+                <i class="fas fa-mars"></i>
+                Hombres
+            </button>
+            <button class="categoria-btn">
+                <i class="fas fa-venus"></i>
+                Mujeres
+            </button>
+            <button class="categoria-btn">
+                <i class="fas fa-child"></i>
+                Niños
+            </button>
+            <button class="categoria-btn">
+                <i class="fas fa-child-reaching"></i>
+                Niñas
+            </button>
+        </div>
+    </section>
+
+</body>
+</html>
