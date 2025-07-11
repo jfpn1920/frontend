@@ -21,6 +21,11 @@
             <input type="text" placeholder="Buscar...">
             <i class="fas fa-search"></i>
         </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="nav-section">
             <nav class="nav-links">
                 <a href="#">Inicio</a>
@@ -56,26 +61,481 @@
     <!--|estructura_vistas_de_categorias|-->
     <!------------------------------------->
     <section class="categorias">
-        <h2>Vistas de categorías</h2>
+        <h2>Productos Nuevos</h2>
         <div class="categoria-lista">
-            <button class="categoria-btn">
-                <i class="fas fa-mars"></i>
-                Hombres
+            <button class="categoria-btn" onclick="mostrarCategoria('hombres')">
+                <i class="fas fa-mars"></i> Hombres
             </button>
-            <button class="categoria-btn">
-                <i class="fas fa-venus"></i>
-                Mujeres
+            <button class="categoria-btn" onclick="mostrarCategoria('mujeres')">
+                <i class="fas fa-venus"></i> Mujeres
             </button>
-            <button class="categoria-btn">
-                <i class="fas fa-child"></i>
-                Niños
+            <button class="categoria-btn" onclick="mostrarCategoria('ninos')">
+                <i class="fas fa-child"></i> Niños
             </button>
-            <button class="categoria-btn">
-                <i class="fas fa-child-reaching"></i>
-                Niñas
+            <button class="categoria-btn" onclick="mostrarCategoria('ninas')">
+                <i class="fas fa-child-reaching"></i> Niñas
             </button>
         </div>
+        <div class="productos-grid categoria-productos">
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagen_5_parte_1.png" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$45.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagen_6_parte_1.png" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagen_7_parte_1.png" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------->
+        <!--|estructura_categorias_de_hombres|-->
+        <!-------------------------------------->      
+        <div id="productos-hombres" class="productos-grid categoria-productos hidden">
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$45.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------->
+        <!--|estructura_categorias_de_mujeres|-->
+        <!-------------------------------------->  
+        <div id="productos-mujeres" class="productos-grid categoria-productos hidden">
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$45.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+        </div>
+        <!------------------------------------>
+        <!--|estructura_categorias_de_niños|-->
+        <!------------------------------------>
+        <div id="productos-ninos" class="productos-grid categoria-productos hidden">
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$45.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+        </div>
+        <!------------------------------------>
+        <!--|estructura_categorias_de_niñas|-->
+        <!------------------------------------>
+        <div id="productos-ninas" class="productos-grid categoria-productos hidden">
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$45.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+            <div class="producto">
+                <div class="producto-header">
+                    Masomy
+                    <div>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="producto-body">
+                    <img src="imagenes/hombres1.jpg" alt="">
+                </div>
+                <div class="producto-footer">
+                    Camisa casual<br>$145.000
+                </div>
+            </div>
+        </div>
     </section>
-
+    <!----------------------------------->
+    <!--|estructura_proximos_productos|-->
+    <!----------------------------------->
+    <section class="proximamente">
+        <div class="contenido">
+            <img src="imagen_4.png" alt="Personaje Masomy" class="avatar">
+            <h2>Próximamente en Masomy</h2>
+            <p>
+                ¡Se vienen sorpresas! Este mes llegan nuevos productos a Masomy.
+                Estén atentos a nuestras redes sociales para descubrir todos los detalles muy pronto.
+            </p>
+            <div class="redes">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+    <!------------------------------------->
+    <!--|estructura_ofertas_o_descuentos|-->
+    <!------------------------------------->
+    <div class="contenedor_oferta_y_descuento">
+        <h2 class="titulo_ofetas_descuentos">Ofertas Y Descuentos</h2>
+        <div class="descuento_mujeres">
+            <img src="ofertas_o_descuentos_mujeres.png" alt="" class="img1">
+        </div>
+        <div class="descuento_hombres">
+            <img src="ofertas_o_descuentos_hombres.png" alt="" class="img2">
+        </div>
+        <div class="descuento_niños">
+            <img src="ofertas_o_descuentos_niños.png" alt="" class="img3">
+        </div>
+        <div class="descuento_niñas">
+            <img src="ofertas_o_descuentos_niñas.png" alt="" class="img4">
+        </div>   
+    </div>     
+    <!-------------------------------------->
+    <!--|estructura_video_de_presentacion|-->
+    <!--------------------------------------> 
+    <div class="video-box">
+        <h2 class="titulo_presentacion">video de presentación</h2>
+        <video controls>
+            <source src="video_de_presentcion_masomy.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </div>
+    <div class="contenedor_oferta_y_descuentopr">
+        <img src="en_masomy.png" alt="" class="img5">
+    </div>
+    <!------------------------------->
+    <!--|estructura_top_categorias|-->
+    <!------------------------------->
+    <section class="top-container">
+        <h1>Las mejores productos calificados</h1>
+        <div class="grid-categorias">
+            <div class="categoria">
+                <div class="top-numero">1</div>
+                <img src="imagen_6_parte_2.png" alt="Ropa Mujer">
+                <h3>Ropa de Mujer</h3>
+                <div class="estrellas">★★★★★</div>
+            </div>
+            <div class="categoria">
+                <div class="top-numero">2</div>
+                <img src="imagen_5_parte_2.png" alt="Ropa Hombre">
+                <h3>Ropa de Hombre</h3>
+                <div class="estrellas">★★★★☆</div>
+            </div>
+            <div class="categoria">
+                <div class="top-numero">3</div>
+                <img src="imagen_7_parte_1.png" alt="Ropa Niños">
+                <h3>Ropa de Niños</h3>
+                <div class="estrellas">★★★★☆</div>
+            </div>
+        </div>
+    </section>
+    <!------------------------------>
+    <!--|estructura_pie_de_pagina|-->
+    <!------------------------------>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-header">
+                <img src="imagen_4.png" alt="Logo Masomy" class="footer-logo">
+                <h3 class="footer-title">Masomy</h3>
+            </div>
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h3>Políticas</h3>
+                    <ul>
+                        <li><i class="fas fa-exchange-alt"></i> Cambios y devoluciones</li>
+                        <li><i class="fas fa-shield-alt"></i> Garantía</li>
+                        <li><i class="fas fa-credit-card"></i> Pagos</li>
+                        <li><i class="fas fa-truck"></i> Envíos</li>
+                        <li><i class="fas fa-user-shield"></i> Privacidad y datos</li>
+                        <li><i class="fas fa-tags"></i> Promociones y descuentos</li>
+                        <li><i class="fas fa-headset"></i> Atención al cliente</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociales</h3>
+                    <ul>
+                        <li><i class="fab fa-facebook-f"></i> Facebook</li>
+                        <li><i class="fab fa-instagram"></i> Instagram</li>
+                        <li><i class="fab fa-twitter"></i> Twitter</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><i class="fas fa-home"></i> Inicio</li>
+                        <li><i class="fas fa-users"></i> Nosotros</li>
+                        <li><i class="fas fa-envelope-open-text"></i> Contáctanos</li>
+                        <li><i class="fas fa-th-large"></i> Categorías</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categorías</h3>
+                    <ul>
+                        <li><i class="fas fa-female"></i> Mujeres</li>
+                        <li><i class="fas fa-male"></i> Hombres</li>
+                        <li><i class="fas fa-child"></i> Niños</li>
+                        <li><i class="fas fa-child"></i> Niñas</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contáctanos</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> masomyoficial@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 12345678910</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Santa Clara</li>
+                        <li><i class="fas fa-clock"></i> Lunes a Viernes de 7:00 am hasta las 8:10 pm</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 - Masomy. Todos los derechos reservados.
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,3 +1,10 @@
+//--------------------------------------//
+//--|funcionalidad_menu_de_navegacion|--//
+//--------------------------------------//
+function toggleMenu() {
+    const navSection = document.querySelector('.nav-section');
+    navSection.classList.toggle('active');
+}
 //----------------------------//
 //--|funcionalidad_carrusel|--//
 //----------------------------//
@@ -30,3 +37,11 @@ indicators.forEach(indicator => {
 //----------------------------------------//
 //--|funcionalidad_vistas_de_categorias|--//
 //----------------------------------------//
+function mostrarCategoria(categoriaSeleccionada) {
+    const contenedores = document.querySelectorAll('.categoria-productos');
+    contenedores.forEach(c => c.classList.add('hidden'));
+    const contenedorVisible = document.getElementById(`productos-${categoriaSeleccionada}`);
+    if (contenedorVisible) {
+        contenedorVisible.classList.remove('hidden');
+    }
+}
