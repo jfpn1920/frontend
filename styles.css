@@ -803,4 +803,253 @@ body {
         background-color: #f4f4f4;
         border-top: 1px solid #ccc;
     }
+    /*------------------------*/
+    /*--|proximos_productos|--*/
+    /*------------------------*/
+    .proximamente {
+        width: 100%;
+        height: auto;
+        background-color: #eef2dd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 20px;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        flex-direction: column;
+    }
+    .proximamente .contenido {
+        max-width: 100%;
+        background-color: transparent;
+    }
+    .proximamente .avatar {
+        width: 100px;
+        height: auto;
+        border-radius: 20px;
+        margin-bottom: 15px;
+    }
+    .proximamente h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+        text-shadow: 2px 2px 0 #fff;
+        margin-bottom: 15px;
+    }
+    .proximamente p {
+        font-size: 14px;
+        color: #5c4b4b;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0 10px;
+    }
+    .proximamente .redes {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .proximamente .redes a {
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        color: #5c4b4b;
+        font-size: 16px;
+        text-decoration: none;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .proximamente .redes a:hover {
+        background-color: #d3d3d3;
+        transform: scale(1.1);
+    }
+    /*--------------------------*/
+    /*--|ofertas_o_descuentos|--*/
+    /*--------------------------*/
+    .contenedor_oferta_y_descuento {
+        margin-top: 40px;
+        padding: 0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    .titulo_ofetas_descuentos {
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        margin: 0 0 20px 0;
+        font-weight: bold;
+        color: #000;
+    }
+    .descuento_mujeres,
+    .descuento_hombres,
+    .descuento_niños,
+    .descuento_niñas {
+        flex: 1 1 42%;
+        max-width: 160px;
+        margin: 5px;
+    }
+    .img1,
+    .img2,
+    .img3,
+    .img4 {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        border: 2px solid #e7ebda;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        display: block;
+    }
+    /*---------------------------*/
+    /*--|video_de_presentación|--*/
+    /*---------------------------*/    
+    .video-box {
+        width: 90%;
+        height: auto;
+        margin: 40px auto 20px;
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 15px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .titulo_presentacion {
+        font-size: 18px;
+        padding: 10px 0;
+        margin-left: 0;
+        margin-top: -30px;
+        text-align: center;
+    }
+    .video-box video {
+        width: 100%;
+        margin-top: 20px;
+        height: auto;
+        object-fit: cover;
+    }
+    .contenedor_oferta_y_descuentopr {
+        width: 90%;
+        height: auto;
+        border-radius: 5px;
+        margin: 20px auto;
+        background-color: #5c4b4b;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .contenedor_oferta_y_descuentopr .img5 {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    /*--------------------*/
+    /*--|top_categorias|--*/
+    /*--------------------*/
+    .top-container {
+        padding: 15px 8px;
+    }
+    .top-container h1 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .grid-categorias {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 0;
+    }
+    .categoria {
+        margin-top: 10px;
+        border-radius: 4px;
+    }
+    .categoria img {
+        height: 150px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .top-numero {
+        font-size: 20px;
+        top: 5px;
+        left: 5px;
+    }
+    .categoria h3 {
+        font-size: 12px;
+        margin: 6px 0 4px;
+    }
+    .estrellas {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+    /*-------------------*/
+    /*--|pie_de_pagina|--*/
+    /*-------------------*/
+    .footer {
+        padding: 30px 10px;
+        text-align: center;
+    }
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-sections {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        text-align: center;
+    }
+    .footer-section {
+        flex: 1 1 45%;
+        max-width: 220px;
+        min-width: 160px;
+    }
+    .footer-section h3 {
+        font-size: 16px;
+        border-bottom: 2px solid #000;
+        padding-bottom: 5px;
+        margin-bottom: 12px;
+        display: inline-block;
+    }
+    .footer-section ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .footer-section ul li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        color: #000;
+        margin-left: 10px;
+        width: 600px;
+    }
+    .footer-section ul li i {
+        min-width: 18px;
+        color: #000;
+        font-size: 16px;
+    }
+    .footer-logo {
+        width: 90px;
+        margin: 0 auto;
+        display: block;
+    }
+    .footer-title {
+        font-size: 20px;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #000;
+    }
+    .footer-bottom {
+        margin-top: 40px;
+        font-size: 12px;
+        padding-top: 15px;
+        text-align: center;
+        border-top: 1px solid #333;
+    }
+    .footer-section.contacto {
+        margin-left: -100px;
+    }
 }
