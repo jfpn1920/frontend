@@ -5,14 +5,6 @@ function toggleMenu() {
     const navSection = document.querySelector('.nav-section');
     navSection.classList.toggle('active');
 }
-window.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 10) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
-});
 //----------------------------//
 //--|funcionalidad_carrusel|--//
 //----------------------------//
