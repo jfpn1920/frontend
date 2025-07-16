@@ -1,10 +1,14 @@
 //--------------------------------------//
 //--|funcionalidad_menu_de_navegacion|--//
 //--------------------------------------//
-function toggleMenu() {
-    const navSection = document.querySelector('.nav-section');
-    navSection.classList.toggle('active');
-}
+document.getElementById('barraBusqueda').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        const query = this.value.trim();
+        if (query !== '') {
+            window.location.href = `busqueda_de_productos.html?query=${encodeURIComponent(query)}`;
+        }
+    }
+});
 //----------------------------//
 //--|funcionalidad_carrusel|--//
 //----------------------------//

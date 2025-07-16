@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tienda de ropa</title>
+    <link rel="stylesheet" href="busqueda_de_productos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="busqueda_de_productos.js" defer></script>
+</head>
+<body>
+    <!----------------------------------->
+    <!--|estructura_menu_de_navegacion|-->
+    <!----------------------------------->
+    <header class="navbar">
+        <div class="logo">
+            <img src="imagen_4.png" alt="Logo Masomy" />
+            Masomy
+        </div>
+        <div class="search-bar">
+            <input type="text" id="barraBusqueda" placeholder="Buscar producto..." />
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="nav-section">
+            <nav class="nav-links">
+                <a href="#">Inicio</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Contáctanos</a>
+                <a href="#">Categorías</a>
+            </nav>
+            <div class="icons">
+                <i class="fas fa-bell" title="Campana"></i>
+                <i class="fas fa-shopping-cart" title="Carrito de compras"></i>
+                <i class="fas fa-heart" title="Favoritos"></i>
+                <i class="fas fa-user" title="Perfil de usuario"></i>
+            </div>
+        </div>
+    </header>
+    <!------------------------>
+    <!--|estructura_filtros|-->
+    <!------------------------>
+    <div class="filtro-container">
+        <h3>FILTRAR</h3>
+        <div class="filtro-opciones">
+            <p><strong>ORDENAR POR</strong></p>    
+            <label><input type="checkbox" name="filtro" value="precio_alto"> Precio alto</label>
+            <label><input type="checkbox" name="filtro" value="precio_bajo"> Precio bajo</label>
+            <label><input type="checkbox" name="filtro" value="mas_vendidos"> Más vendidos</label>
+            <label><input type="checkbox" name="filtro" value="ordenados_por_a_z"> Ordenados por A - Z</label>
+            <label><input type="checkbox" name="filtro" value="mas_recientes"> Más recientes</label>
+            <label><input type="checkbox" name="filtro" value="descuento"> Descuento</label>
+        </div>
+        <div class="filtro-opciones">
+            <p><strong>CATEGORÍAS</strong></p>
+            <label><input type="checkbox" name="categoria" value="hombres"> Hombres</label>
+            <label><input type="checkbox" name="categoria" value="mujeres"> Mujeres</label>
+            <label><input type="checkbox" name="categoria" value="niños"> Niños</label>
+            <label><input type="checkbox" name="categoria" value="niñas"> Niñas</label>
+            <label><input type="checkbox" name="categoria" value="bebes"> Bebés</label>
+        </div>  
+        <div class="filtro-opciones">
+            <p><strong>TALLAS</strong></p>
+            <label><input type="checkbox" name="talla" value="xs"> XS</label>
+            <label><input type="checkbox" name="talla" value="s"> S</label>
+            <label><input type="checkbox" name="talla" value="m"> M</label>
+            <label><input type="checkbox" name="talla" value="l"> L</label>
+            <label><input type="checkbox" name="talla" value="xl"> XL</label>
+            <label><input type="checkbox" name="talla" value="28"> 28</label>
+            <label><input type="checkbox" name="talla" value="30"> 30</label>
+            <label><input type="checkbox" name="talla" value="32"> 32</label>
+            <label><input type="checkbox" name="talla" value="34"> 34</label>
+            <label><input type="checkbox" name="talla" value="36"> 36</label>
+        </div>
+        <div class="filtro-opciones">
+            <p><strong>ESTILO</strong></p>
+            <label><input type="checkbox" name="estilo" value="vertical"> Vertical</label>
+            <label><input type="checkbox" name="estilo" value="horizontal"> Horizontal</label>
+        </div>     
+    </div>
+    <!-------------------------------------->
+    <!--|estructura_busqueda_de_productos|-->
+    <!-------------------------------------->
+    <div class="contenedor_categoria">
+        <div id="contenedor-productos" class="productos-grid"></div>
+    </div>
+    <!------------------------------>
+    <!--|estructura_pie_de_pagina|-->
+    <!------------------------------>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-header">
+                <img src="imagen_4.png" alt="Logo Masomy" class="footer-logo">
+                <h3 class="footer-title">Masomy</h3>
+            </div>
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h3>Políticas</h3>
+                    <ul>
+                        <li><i class="fas fa-exchange-alt"></i> Cambios y devoluciones</li>
+                        <li><i class="fas fa-shield-alt"></i> Garantía</li>
+                        <li><i class="fas fa-credit-card"></i> Pagos</li>
+                        <li><i class="fas fa-truck"></i> Envíos</li>
+                        <li><i class="fas fa-user-shield"></i> Privacidad y datos</li>
+                        <li><i class="fas fa-tags"></i> Promociones y descuentos</li>
+                        <li><i class="fas fa-headset"></i> Atención al cliente</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociales</h3>
+                    <ul>
+                        <li><i class="fab fa-facebook-f"></i> Facebook</li>
+                        <li><i class="fab fa-instagram"></i> Instagram</li>
+                        <li><i class="fab fa-twitter"></i> Twitter</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><i class="fas fa-home"></i> Inicio</li>
+                        <li><i class="fas fa-users"></i> Nosotros</li>
+                        <li><i class="fas fa-envelope-open-text"></i> Contáctanos</li>
+                        <li><i class="fas fa-th-large"></i> Categorías</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categorías</h3>
+                    <ul>
+                        <li><i class="fas fa-female"></i> Mujeres</li>
+                        <li><i class="fas fa-male"></i> Hombres</li>
+                        <li><i class="fas fa-child"></i> Niños</li>
+                        <li><i class="fas fa-child"></i> Niñas</li>
+                    </ul>
+                </div>
+                <div class="footer-section contacto">
+                    <h3>Contáctanos</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> masomyoficial@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 12345678910</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Santa Clara</li>
+                        <li><i class="fas fa-clock"></i> 7:00 am hasta las 8:10 pm</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 - Masomy. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>
