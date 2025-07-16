@@ -5,6 +5,10 @@
 }
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* ✅ evita scroll lateral */
+    box-sizing: border-box;
 }
 /*-------------------------------*/
 /*--|estilo_menu_de_navegacion|--*/
@@ -228,11 +232,25 @@ body {
     margin-right: 8px;
     cursor: pointer;
 }
+.producto.vertical {
+    flex-direction: column;
+    text-align: center;
+}
+.producto.horizontal {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+.producto.horizontal .producto-body img {
+    width: 120px;
+    height: auto;
+}
 /*--------------------------*/
 /*--|estilo_pie_de_pagina|--*/
 /*--------------------------*/
 .footer {
     background-color: #e7ebda;
+    margin-top: 100px;
     color: #fff;
     padding: 60px 20px;
     animation: fadeInUp 1s ease-in-out;

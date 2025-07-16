@@ -33,11 +33,14 @@ window.addEventListener('DOMContentLoaded', () => {
             etiquetas: ['pantalon', 'pantalones', 'jean', 'ropa']
         },
         {
-            nombre: 'Pantalón formal mujer',
-            tipos: ['mujer'],
-            imagen: 'pantalon_formal_mujer.png',
-            precio: '$135.000',
-            etiquetas: ['pantalon', 'pantalones', 'ropa']
+            nombre: 'Pantalón jean hombre',
+            tipos: ['hombre'],
+            imagen: 'pantalon_jean_hombre.png',
+            precio: '$120.000',
+            etiquetas: ['pantalon', 'pantalones', 'jean', 'ropa'],
+            fecha: '2025-07-14',
+            descuento: true,
+            tallas: ['s', 'm', 'l', 'xl'] // ← nueva propiedad
         },
         {
             nombre: 'Pantalón deportivo niño',
@@ -52,6 +55,45 @@ window.addEventListener('DOMContentLoaded', () => {
             imagen: 'pantalon_leggings_niña.png',
             precio: '$85.000',
             etiquetas: ['pantalon', 'pantalones', 'leggings']
+        },
+        {
+            nombre: 'Pantalón hombre',
+            tipos: ['hombre'],
+            imagen: 'pantalon_jean_hombre.png',
+            precio: '$120.000',
+            etiquetas: ['pantalon', 'pantalones', 'jean', 'ropa'],
+            fecha: '2025-07-14',          
+            descuento: true               
+        },
+        {
+            nombre: 'jean de mujeres',
+            tipos: ['hombre'],
+            imagen: 'pantalon_jean_hombre.png',
+            precio: '$120.000',
+            etiquetas: ['pantalon', 'pantalones', 'jean', 'ropa'],
+            fecha: '2025-07-14',          
+            descuento: true,
+            tallas: ['s', 'm', 'l', 'xl'] // ← nueva propiedad          
+        },
+        {
+            nombre: 'Pantalón de niños',
+            tipos: ['hombre'],
+            imagen: 'pantalon_jean_hombre.png',
+            precio: '$120.000',
+            etiquetas: ['pantalon', 'pantalones', 'jean', 'ropa'],
+            fecha: '2025-07-14',          
+            descuento: true,
+            tallas: ['s', 'm', 'l', 'xl'] // ← nueva propiedad               
+        },
+        {
+            nombre: 'Pantalón',
+            tipos: ['hombre'],
+            imagen: 'pantalon_jean_hombre.png',
+            precio: '$120.000',
+            etiquetas: ['pantalon', 'pantalones', 'jean', 'ropa'],
+            fecha: '2025-07-14',          
+            descuento: true,
+            tallas: ['s', 'm', 'l', 'xl'] // ← nueva propiedad               
         },
         {
             nombre: 'Pantalón jean hombre',
@@ -163,6 +205,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     <span class="categoria">${categoria}</span>
                 </div>
             `;
+            div.setAttribute('data-fecha', producto.fecha || '2024-01-01');
+            div.setAttribute('data-descuento', producto.descuento ? 'true' : 'false');
+            div.setAttribute('data-talla', producto.tallas ? producto.tallas.join(',') : '');
             contenedor.appendChild(div);
         });
     } else {
@@ -173,3 +218,84 @@ window.addEventListener('DOMContentLoaded', () => {
         `;
     }
 });
+///-----------------------------//
+//--|funcionalidad_de_filtro|--//
+//-----------------------------//
+document.querySelectorAll('input[name="filtro"], input[name="categoria"], input[name="talla"], input[name="estilo"]').forEach(filtro => {
+    filtro.addEventListener('change', aplicarFiltros);
+});
+function aplicarFiltros() {
+    const filtrosSeleccionados = [...document.querySelectorAll('input[name="filtro"]:checked')].map(cb => cb.value);
+    const categoriasSeleccionadas = [...document.querySelectorAll('input[name="categoria"]:checked')].map(cb => cb.value);
+    const tallasSeleccionadas = [...document.querySelectorAll('input[name="talla"]:checked')].map(cb => cb.value.toLowerCase());
+    const estilosSeleccionados = [...document.querySelectorAll('input[name="estilo"]:checked')].map(cb => cb.value.toLowerCase());
+    let productos = [...document.querySelectorAll('.producto')].map(card => {
+        const tipoTexto = card.querySelector('.producto-header').textContent.toLowerCase();
+        const tipo = tipoTexto.includes('masomy - ') 
+            ? tipoTexto.replace('masomy - ', '').trim()
+            : '';
+        const tallas = (card.dataset.talla || '').toLowerCase().split(',');
+        return {
+            elemento: card,
+            nombre: card.querySelector('.producto-footer').childNodes[0].textContent.trim(),
+            precio: extraerPrecio(card.querySelector('.producto-footer').childNodes[2].textContent),
+            fecha: card.dataset.fecha || '2024-01-01',
+            descuento: card.dataset.descuento === "true",
+            tipo: tipo,
+            tallas: tallas
+        };
+    });
+    let productosSeleccionados = productos;
+    let productosNoSeleccionados = [];
+    if (tallasSeleccionadas.length > 0) {
+        productosSeleccionados = productos.filter(p =>
+            p.tallas.some(talla => tallasSeleccionadas.includes(talla))
+        );
+        productosNoSeleccionados = productos.filter(p =>
+            !p.tallas.some(talla => tallasSeleccionadas.includes(talla))
+        );
+    }
+    if (categoriasSeleccionadas.length > 0) {
+        productosNoSeleccionados = productosNoSeleccionados.filter(p =>
+            !categoriasSeleccionadas.includes(p.tipo)
+        );
+        productosSeleccionados = productosSeleccionados.filter(p =>
+            categoriasSeleccionadas.includes(p.tipo)
+        );
+    }
+    if (filtrosSeleccionados.includes('precio_alto')) {
+        productosSeleccionados.sort((a, b) => b.precio - a.precio);
+    }
+    if (filtrosSeleccionados.includes('precio_bajo')) {
+        productosSeleccionados.sort((a, b) => a.precio - b.precio);
+    }
+    if (filtrosSeleccionados.includes('mas_vendidos')) {
+        productosSeleccionados.sort(() => Math.random() - 0.5);
+    }
+    if (filtrosSeleccionados.includes('ordenados_por_a_z')) {
+        productosSeleccionados.sort((a, b) => a.nombre.localeCompare(b.nombre));
+    }
+    if (filtrosSeleccionados.includes('mas_recientes')) {
+        productosSeleccionados.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+    }
+    if (filtrosSeleccionados.includes('descuento')) {
+        const conDescuento = productosSeleccionados.filter(p => p.descuento);
+        const sinDescuento = productosSeleccionados.filter(p => !p.descuento);
+        productosSeleccionados = [...conDescuento, ...sinDescuento];
+    }
+    productosNoSeleccionados.sort(() => Math.random() - 0.5);
+    const resultadoFinal = [...productosSeleccionados, ...productosNoSeleccionados];
+    const estilo = estilosSeleccionados[0] || ''; // 'vertical' o 'horizontal'
+    const contenedor = document.getElementById('contenedor-productos');
+    contenedor.innerHTML = '';
+    resultadoFinal.forEach(p => {
+        p.elemento.classList.remove('vertical', 'horizontal');
+        if (estilo) {
+            p.elemento.classList.add(estilo);
+        }
+        contenedor.appendChild(p.elemento);
+    });
+}
+function extraerPrecio(precioTexto) {
+    return parseInt(precioTexto.replace(/\D/g, '')) || 0;
+}
