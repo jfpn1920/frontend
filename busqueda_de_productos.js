@@ -226,7 +226,7 @@ document.querySelectorAll('input[name="filtro"], input[name="categoria"], input[
 });
 function aplicarFiltros() {
     const filtrosSeleccionados = [...document.querySelectorAll('input[name="filtro"]:checked')].map(cb => cb.value);
-    const categoriasSeleccionadas = [...document.querySelectorAll('input[name="categoria"]:checked')].map(cb => cb.value);
+    const categoriasSeleccionadas = [...document.querySelectorAll('input[name="categoria"]:checked')].map(cb => cb.value.toLowerCase());
     const tallasSeleccionadas = [...document.querySelectorAll('input[name="talla"]:checked')].map(cb => cb.value.toLowerCase());
     const estilosSeleccionados = [...document.querySelectorAll('input[name="estilo"]:checked')].map(cb => cb.value.toLowerCase());
     let productos = [...document.querySelectorAll('.producto')].map(card => {
@@ -245,24 +245,18 @@ function aplicarFiltros() {
             tallas: tallas
         };
     });
-    let productosSeleccionados = productos;
+    let productosSeleccionados = [];
     let productosNoSeleccionados = [];
-    if (tallasSeleccionadas.length > 0) {
-        productosSeleccionados = productos.filter(p =>
-            p.tallas.some(talla => tallasSeleccionadas.includes(talla))
-        );
-        productosNoSeleccionados = productos.filter(p =>
-            !p.tallas.some(talla => tallasSeleccionadas.includes(talla))
-        );
-    }
-    if (categoriasSeleccionadas.length > 0) {
-        productosNoSeleccionados = productosNoSeleccionados.filter(p =>
-            !categoriasSeleccionadas.includes(p.tipo)
-        );
-        productosSeleccionados = productosSeleccionados.filter(p =>
-            categoriasSeleccionadas.includes(p.tipo)
-        );
-    }
+    productos.forEach(p => {
+        const coincideCategoria = categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(p.tipo);
+        const coincideTalla = tallasSeleccionadas.length === 0 || p.tallas.some(t => tallasSeleccionadas.includes(t));
+        const coincideEstilo = estilosSeleccionados.length === 0 || estilosSeleccionados.includes(p.tipo);
+        if (coincideCategoria && coincideTalla && coincideEstilo) {
+            productosSeleccionados.push(p);
+        } else {
+            productosNoSeleccionados.push(p);
+        }
+    });
     if (filtrosSeleccionados.includes('precio_alto')) {
         productosSeleccionados.sort((a, b) => b.precio - a.precio);
     }
