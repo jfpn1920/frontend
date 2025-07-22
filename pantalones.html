@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tienda de ropa</title>
-    <link rel="stylesheet" href="busqueda_de_productos.css">
+    <link rel="stylesheet" href="pantalones.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <script src="busqueda_de_productos.js" defer></script>
+    <script src="pantalones.js" defer></script>
 </head>
 <body>
     <!----------------------------------->
@@ -43,10 +43,9 @@
         <h3>FILTRAR</h3>
         <div class="filtro-opciones">
             <p><strong>ORDENAR POR</strong></p>    
-            <label><input type="checkbox" name="filtro" value="precio_alto"> Precio alto</label>
-            <label><input type="checkbox" name="filtro" value="precio_bajo"> Precio bajo</label>
+            <label><input type="checkbox" name="filtro" value="precio_alto" id="orden-precio-alto"> Precio Alto</label>
+            <label><input type="checkbox" name="filtro" value="precio_bajo" id="orden-precio-bajo"> Precio bajo</label>
             <label><input type="checkbox" name="filtro" value="mas_vendidos"> Más vendidos</label>
-            <label><input type="checkbox" name="filtro" value="ordenados_por_a_z"> Ordenados por A - Z</label>
             <label><input type="checkbox" name="filtro" value="mas_recientes"> Más recientes</label>
             <label><input type="checkbox" name="filtro" value="descuento"> Descuento</label>
         </div>
@@ -60,33 +59,179 @@
         </div>  
         <div class="filtro-opciones">
             <p><strong>TALLAS</strong></p>
+            <label><input type="checkbox" name="talla" value="xxs"> XXS</label>
             <label><input type="checkbox" name="talla" value="xs"> XS</label>
             <label><input type="checkbox" name="talla" value="s"> S</label>
             <label><input type="checkbox" name="talla" value="m"> M</label>
             <label><input type="checkbox" name="talla" value="l"> L</label>
             <label><input type="checkbox" name="talla" value="xl"> XL</label>
-            <label><input type="checkbox" name="talla" value="28"> 28</label>
-            <label><input type="checkbox" name="talla" value="30"> 30</label>
-            <label><input type="checkbox" name="talla" value="32"> 32</label>
-            <label><input type="checkbox" name="talla" value="34"> 34</label>
-            <label><input type="checkbox" name="talla" value="36"> 36</label>
+            <label><input type="checkbox" name="talla" value="xxl"> XXL</label>
+            <label><input type="checkbox" name="talla" value="xxxl"> XXXL</label>
         </div>
         <div class="filtro-opciones">
             <p><strong>ESTILO</strong></p>
             <label><input type="checkbox" name="estilo" value="vertical"> Vertical</label>
             <label><input type="checkbox" name="estilo" value="horizontal"> Horizontal</label>
-        </div>     
+        </div>
+        <div class="filtro-opciones">
+            <p><strong>PRECIO</strong></p>
+            <div class="slider-precio">
+                <input type="range" id="precioMin" min="0" max="500000" step="10000" value="50000" oninput="actualizarPrecio()">
+                <input type="range" id="precioMax" min="0" max="500000" step="10000" value="300000" oninput="actualizarPrecio()">
+                <div class="precios-mostrados">
+                    <span id="valorMin">$50.000</span> - <span id="valorMax">$300.000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------->
+    <!--|estructura_resultados_de_busqueda|-->
+    <!--------------------------------------->
+    <div class="contenedor_resultados_de_busqueda">
+        <p class="resultado_busqueda">Resultado de busqueda | | 24 productos disponibles</p>
     </div>
     <!-------------------------------------->
-    <!--|estructura_busqueda_de_productos|-->
+    <!--|estructura_categorias_pantalones|-->
     <!-------------------------------------->
-    <div class="contenedor_categoria">
-        <div id="contenedor-productos" class="productos-grid"></div>
+    <div class="contenedor_pantalones" id="contenedor_pantalones">
+        <div class="producto">
+            <div class="producto-header">
+                Masomy
+                <div>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <div class="producto-body">
+                <img src="imagenes/hombres1.jpg" alt="">
+            </div>
+            <div class="producto-footer">
+                | pantalon | xxs | azul |<br>$90.000
+            </div>
+        </div>
+        <div class="producto2">
+            <div class="producto-header">
+                Masomy
+                <div>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <div class="producto-body">
+                <img src="imagenes/hombres1.jpg" alt="">
+            </div>
+            <div class="producto-footer">
+                | pantalon | xss | azul |<br>$145.000
+            </div>
+        </div>
+        <div class="producto3">
+            <div class="producto-header">
+                Masomy
+                <div>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <div class="producto-body">
+                <img src="imagenes/hombres1.jpg" alt="">
+            </div>
+            <div class="producto-footer">
+                | pantalon | s | azul |<br>$245.000
+            </div>
+        </div>
+        <div class="producto4">
+            <div class="producto-header">
+                Masomy
+                <div>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <div class="producto-body">
+                <img src="imagenes/hombres1.jpg" alt="">
+            </div>
+            <div class="producto-footer">
+                | pantalon | xs | azul |<br>$345.000
+            </div>
+        </div>
+        <div class="producto5">
+            <div class="producto-header">
+                Masomy
+                <div>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <div class="producto-body">
+                <img src="imagenes/hombres1.jpg" alt="">
+            </div>
+            <div class="producto-footer">
+                | pantalon | m | azul |<br>$400.000
+            </div>
+        </div>
+        <div class="producto6">
+            <div class="producto-header">
+                Masomy
+                <div>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <div class="producto-body">
+                <img src="imagenes/hombres1.jpg" alt="">
+            </div>
+            <div class="producto-footer">
+                | pantalon | l | azul |<br>$85.500
+            </div>
+        </div>
+        <div class="producto7">
+            <div class="producto-header">
+                Masomy
+                <div>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <div class="producto-body">
+                <img src="imagenes/hombres1.jpg" alt="">
+            </div>
+            <div class="producto-footer">
+                | pantalon | xl | azul |<br>$78.100
+            </div>
+        </div>
+        <div class="producto8">
+            <div class="producto-header">
+                Masomy
+                <div>
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <div class="producto-body">
+                <img src="imagenes/hombres1.jpg" alt="">
+            </div>
+            <div class="producto-footer">
+                | pantalon | xxl | azul |<br>$60.999
+            </div>
+        </div>        
+    </div>
+    <!------------------------------>
+    <!--|estructura_boton_ver_mas|-->
+    <!------------------------------>
+    <div id="contenedor-productos" data-grupo="0">
+        
+    </div>
+    <div class="barra-progreso">
+        <span class="paso activo"></span>
+        <span class="paso"></span>
+    </div>
+    <div class="contenedor">
+        <button id="btn-ver-mas" class="btn-ver-mas">Ver más</button>
     </div>
     <!------------------------------>
     <!--|estructura_pie_de_pagina|-->
-    <!-----------------------------
-    <footer class="footer">
+    <!------------------------------>
+    <footer class="footer contedores">
         <div class="footer-container">
             <div class="footer-header">
                 <img src="imagen_4.png" alt="Logo Masomy" class="footer-logo">
@@ -145,6 +290,6 @@
         <div class="footer-bottom">
             © 2025 - Masomy. Todos los derechos reservados.
         </div>
-    </footer>-->
+    </footer>
 </body>
 </html>
